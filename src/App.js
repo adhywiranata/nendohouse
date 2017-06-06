@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { Provider } from 'react-redux';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+import store from './store';
 
-export default App;
+const Heads = () => (
+  <Helmet>
+    <meta charSet="utf-8" />
+    <title>Nendohouse</title>
+    <link rel="canonical" href="http://nendohouse.com/" />
+  </Helmet>
+);
+
+export default () => (
+  <Provider store={store}>
+    <div>
+      <Heads />
+      <h1>Welcome to NendoHouse</h1>
+    </div>
+  </Provider>
+);
