@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import store from './store';
+import Header from './components/core/Header';
 import HomePage from './containers/HomePage';
 
 const Heads = () => (
@@ -19,6 +20,7 @@ export default () => (
     <BrowserRouter>
       <div>
         <Heads />
+        <Header />
         <Route exact path="/" component={HomePage} />
       </div>
     </BrowserRouter>
