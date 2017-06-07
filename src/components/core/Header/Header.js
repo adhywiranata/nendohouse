@@ -8,11 +8,11 @@ export default glamorous.header({
   padding: 10,
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'space-between',
+  justifyContent: 'space-around',
   alignItems: 'center',
   position: 'fixed',
   zIndex: '+999',
-  width: '99%',
+  width: '100%',
   top: 0,
   left: 0,
 });

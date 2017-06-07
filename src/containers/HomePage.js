@@ -2,11 +2,59 @@ import React from 'react';
 
 import ProductList from '../components/products/List';
 import WideSection from '../components/core/Layout/WideSection';
+import CoverImg from '../images/cover.jpg';
 
 export default class HomePage extends React.Component {
+
+  componentDidMount() {
+    let currentYScroll = 0;
+    const parallaxCover = document.getElementById('parallaxCover');
+    window.addEventListener('scroll', () => {
+      if(window.pageYOffset === 0) {
+        parallaxCover.style.backgroundPosition = '0% -50px';
+        parallaxCover.style.webkitFilter = `grayscale(70%) blur(0px)`;
+        return true;
+      }
+      let currVal = Number(parallaxCover.style.backgroundPosition.split(' ')[1].replace('px', ''));
+      console.log(currVal);
+      let increment = 1;
+      if (window.pageYOffset > currentYScroll) {
+        increment = -1;
+      }
+      currentYScroll = window.pageYOffset;
+      console.log(currVal+increment);
+      parallaxCover.style.backgroundPosition = `0% ${currVal + increment}px`;
+      parallaxCover.style.webkitFilter = `grayscale(70%) blur(3px)`;
+      return true;
+    });
+  }
+
   render() {
     return (
-      <div style={{ paddingTop: 100 }}>
+      <div style={{ paddingTop: 60 }}>
+        <div style={{ position: 'relative', height: 300, overflow: 'hidden' }}>
+          <div
+            id="parallaxCover"
+            style={{
+              transition: '0.1s',
+              background: `url(${CoverImg})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: '0% -50px',
+              backgroundAttachment: 'fixed',
+              backgroundSize: 'contain',
+              WebkitFilter: 'grayscale(70%)',
+              MozFilter: 'grayscale(70%)',
+              OFilter: 'grayscale(70%)',
+              MsFilter: 'grayscale(70%)',
+              filter: 'grayscale(70%)',
+              position: 'absolute',
+              left: -55,
+              right: -55,
+              top: -15,
+              bottom: -15,
+            }}
+          />
+        </div>
         <WideSection>
           <ProductList />
         </WideSection>

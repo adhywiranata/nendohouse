@@ -37,7 +37,7 @@ const ResponsiveItem = glamorous.div({
 const BuyButton = glamorous.button({
   color: colors.white,
   backgroundColor: colors.green,
-  fontSize: 18,
+  fontSize: 16,
   padding: 10,
   border: 0,
   width: '100%',
@@ -46,8 +46,9 @@ const BuyButton = glamorous.button({
   cursor: 'pointer',
   borderBottomRightRadius: 5,
   borderBottomLeftRadius: 5,
-  fontWeight: 'bold',
   outline: 0,
+  ':hover': {
+  },
 });
 
 export default () => (
@@ -58,7 +59,7 @@ export default () => (
         <Title>Izumi Sagiri</Title>
         <Seller>I Gusti Nyoman</Seller>
         <Location>Jakarta</Location>
-        <Price>Rp. 550.000</Price>
+        <Price>Rp.550.000</Price>
       </Info>
       <BuyButton>BUY</BuyButton>
     </Card>

@@ -21,7 +21,7 @@ export default glamorous.div({
     border: '1px solid rgba(0,0,0,.2)',
     '& img': {
       opacity: 1,
-      webkitFilter: 'grayscale(0%)',
+      WebkitFilter: 'grayscale(0%)',
       filter: 'grayscale(0%)',
       transition: '0.5s',
     },
