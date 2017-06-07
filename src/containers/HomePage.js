@@ -6,7 +6,7 @@ import WideSection from '../components/core/Layout/WideSection';
 export default class HomePage extends React.Component {
   render() {
     return (
-      <div>
+      <div style={{ paddingTop: 100 }}>
         <WideSection>
           <ProductList />
         </WideSection>

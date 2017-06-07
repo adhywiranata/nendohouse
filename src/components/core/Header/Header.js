@@ -10,4 +10,9 @@ export default glamorous.header({
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
+  position: 'fixed',
+  zIndex: '+999',
+  width: '99%',
+  top: 0,
+  left: 0,
 });
