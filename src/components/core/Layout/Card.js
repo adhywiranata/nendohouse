@@ -1,5 +1,5 @@
 import glamorous from 'glamorous';
-import { colors } from '../../constants';
+import { colors } from '../../../constants';
 
 export default glamorous.div({
   backgroundColor: colors.white,
