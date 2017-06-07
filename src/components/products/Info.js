@@ -11,22 +11,22 @@ export const Info = glamorous.div({
 
 export const Title = glamorous.span({
   color: colors.orange,
-  fontSize: 16,
-  fontWeight: 'bold',
+  fontSize: 18,
+  margin: 10,
 });
 
 export const Seller = glamorous.span({
   color: colors.darkerGrey,
-  fontSize: 14,
+  fontSize: 12,
 });
 
 export const Location = glamorous.span({
   color: colors.grey,
-  fontSize: 14,
+  fontSize: 12,
 });
 
 export const Price = glamorous.span({
   color: colors.orange,
   fontSize: 18,
-  fontWeight: 'bold',
+  margin: 15,
 });
