@@ -6,5 +6,5 @@ export default glamorous.div({
   border: '1px solid rgba(0,0,0, 0.1)',
   borderRadius: 5,
   padding: 8,
-  margin: 8,
+  margin: 4,
 });

@@ -6,8 +6,9 @@ import Item from './Item';
 const Row = glamorous.div({
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'space-around',
-  alignItems: 'center',
+  justifyContent: 'flex-start',
+  alignItems: 'flex-start',
+  flexWrap: 'wrap',
 });
 
 export default () => (
