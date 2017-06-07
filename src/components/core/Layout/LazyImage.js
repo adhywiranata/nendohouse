@@ -16,7 +16,7 @@ export default class LazyImage extends React.Component {
     return (
       <picture>
         <div
-          style={{ padding: 20, textAlign: 'center' }}
+          style={{ padding: 50, textAlign: 'center' }}
           ref={(imgContainer) => { this.loadingImg = imgContainer; }}
         >
           <img
