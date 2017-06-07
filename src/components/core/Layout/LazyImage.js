@@ -15,12 +15,16 @@ export default class LazyImage extends React.Component {
   render() {
     return (
       <picture>
-        <img
-          src={loadingSvg}
-          alt="loading"
-          width="100%"
-          ref={(img) => { this.loadingImg = img; }}
-        />
+        <div
+          style={{ padding: 20, textAlign: 'center' }}
+          ref={(imgContainer) => { this.loadingImg = imgContainer; }}
+        >
+          <img
+            src={loadingSvg}
+            alt="loading"
+            width="50%"
+          />
+        </div>
         <img
           data-src="http://images.goodsmile.info/cgm/images/product/20170526/6467/45602/large/f09416643e5fb327c6de0e98cadbf025.jpg"
           alt="izumi"
