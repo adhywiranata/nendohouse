@@ -2,6 +2,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 
 import Item from './Item';
+import SectionHeading from '../core/Layout/SectionHeading';
 
 const Row = glamorous.div({
   display: 'flex',
@@ -12,11 +13,14 @@ const Row = glamorous.div({
 });
 
 export default () => (
-  <Row>
-    <Item />
-    <Item />
-    <Item />
-    <Item />
-    <Item />
-  </Row>
+  <div>
+    <SectionHeading>New Releases</SectionHeading>
+    <Row>
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+    </Row>
+  </div>
 );

@@ -1,14 +1,18 @@
 import glamorous from 'glamorous';
 
 export default glamorous.div({
-  padding: 100,
+  paddingLeft: 100,
+  paddingRight: 100,
   '@media(max-width: 1024px)': {
-    padding: 60,
+    paddingLeft: 60,
+    paddingRight: 60,
   },
   '@media(max-width: 768px)': {
-    padding: 50,
+    paddingLeft: 50,
+    paddingRight: 50,
   },
   '@media(max-width: 480px)': {
-    padding: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
   },
 });
