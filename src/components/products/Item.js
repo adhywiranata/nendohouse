@@ -59,7 +59,7 @@ export default ({ name, imageUrl, seller, price, location }) => (
         <Title>{ name }</Title>
         <Seller>{ seller }</Seller>
         <Location>{ location }</Location>
-        <Price>Rp. { price }</Price>
+        <Price>Rp.{ price }</Price>
       </Info>
       <BuyButton>BUY</BuyButton>
     </Card>

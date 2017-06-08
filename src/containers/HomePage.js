@@ -16,9 +16,9 @@ export default class HomePage extends React.Component {
         return true;
       }
       let currVal = Number(parallaxCover.style.backgroundPosition.split(' ')[1].replace('px', ''));
-      let increment = 1;
+      let increment = 3;
       if (window.pageYOffset > currentYScroll) {
-        increment = -1;
+        increment = -3;
       }
       currentYScroll = window.pageYOffset;
       parallaxCover.style.backgroundPosition = `0% ${currVal + increment}px`;
@@ -52,6 +52,11 @@ export default class HomePage extends React.Component {
               bottom: -15,
             }}
           />
+          <div style={{ position: 'absolute', zIndex: 1, backgroundColor: 'rgba(0,0,0,0.3)', width: '100%', height: '100%' }} />
+          <p style={{ position: 'absolute', zIndex: 2, bottom: -10, left: 100, color: '#FFFFFF', fontSize: '1.3em' }}>
+            <h1>NENDOHOUSE COLLECTIONS</h1>
+            <p style={{ marginTop: -20 }}>Your #1 Nendoroid Marketplace</p>
+          </p>
         </div>
         <WideSection>
           <ProductList />
