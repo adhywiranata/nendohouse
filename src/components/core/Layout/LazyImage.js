@@ -6,7 +6,6 @@ export default class LazyImage extends React.Component {
     const srcAttr = this.img.getAttribute('data-src');
     this.img.setAttribute('src', srcAttr);
     this.img.onload = () => {
-      console.log('loading..');
       this.loadingImg.setAttribute('style', 'display: none');
       this.img.setAttribute('style', 'display: block');
     };
