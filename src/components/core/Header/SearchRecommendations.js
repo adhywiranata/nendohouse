@@ -1,0 +1,43 @@
+import React from 'react';
+import glamorous from 'glamorous';
+
+import data from '../../../data/db.json';
+import SearchRecommendationItem from './SearchRecommendationItem';
+
+const stringifiedProducts = JSON.stringify(data.products);
+const replacedKeyProduct = stringifiedProducts.replace(/image_url/g, 'imageUrl');
+const products = JSON.parse(replacedKeyProduct);
+
+
+const FloatingWrapper = glamorous.div({
+  position: 'absolute',
+  zIndex: 9999,
+  width: '100%',
+  left: 0,
+  top: 48,
+  backgroundColor: 'white',
+  borderBottomRightRadius: 5,
+  borderBottomLeftRadius: 5,
+});
+
+const ListHeading = glamorous.div({
+  color: '#666',
+  padding: 10,
+  fontSize: '0.8em',
+  fontWeight: 'bold',
+});
+
+const ListWrapper = glamorous.div({
+  paddingBottom: 5,
+});
+
+export default () => (
+  <FloatingWrapper>
+    <ListHeading>PRODUCTS</ListHeading>
+    <ListWrapper>
+      { products.filter(p => p.id < 6).map(product => (
+        <SearchRecommendationItem key={product.id} />
+      ))}
+    </ListWrapper>
+  </FloatingWrapper>
+);

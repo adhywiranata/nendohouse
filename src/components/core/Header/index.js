@@ -38,6 +38,7 @@ export default class Header extends React.Component {
           <SearchBar
             handleSearchBlur={this.handleSearchBlur}
             handleSearchFocus={this.handleSearchFocus}
+            isSearchFocus={isSearchFocus}
           />
           <Navbar />
         </Headerbar>
