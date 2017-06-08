@@ -12,19 +12,17 @@ export default class HomePage extends React.Component {
     window.addEventListener('scroll', () => {
       if(window.pageYOffset === 0) {
         parallaxCover.style.backgroundPosition = '0% -50px';
-        parallaxCover.style.webkitFilter = `grayscale(70%) blur(0px)`;
+        parallaxCover.style.WebkitFilter = `grayscale(70%) blur(0px)`;
         return true;
       }
       let currVal = Number(parallaxCover.style.backgroundPosition.split(' ')[1].replace('px', ''));
-      console.log(currVal);
       let increment = 1;
       if (window.pageYOffset > currentYScroll) {
         increment = -1;
       }
       currentYScroll = window.pageYOffset;
-      console.log(currVal+increment);
       parallaxCover.style.backgroundPosition = `0% ${currVal + increment}px`;
-      parallaxCover.style.webkitFilter = `grayscale(70%) blur(3px)`;
+      parallaxCover.style.WebkitFilter = `grayscale(70%) blur(3px)`;
       return true;
     });
   }

@@ -11,7 +11,7 @@ export default glamorous.div({
   cursor: 'pointer',
   '& img': {
     opacity: 0.8,
-    webkitFilter: 'grayscale(70%)',
+    WebkitFilter: 'grayscale(70%)',
     filter: 'grayscale(70%)',
     transition: '0.5s',
   },
