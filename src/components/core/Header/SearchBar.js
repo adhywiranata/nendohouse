@@ -6,7 +6,8 @@ const Bar = glamorous.div({
   backgroundColor: colors.white,
   padding: 5,
   borderRadius: 3,
-})
+});
+
 const Search = glamorous.input({
   padding: 12,
   borderRadius: 3,
@@ -29,10 +30,15 @@ const Button = glamorous.button({
   outline: 'none',
 });
 
-export default () => (
+export default ({ handleSearchBlur, handleSearchFocus }) => (
   <div>
     <Bar>
-      <Search type="text" placeholder="Find your future waifus here..." />
+      <Search
+        type="text"
+        placeholder="Find your future waifus here..."
+        onFocus={handleSearchFocus}
+        onBlur={handleSearchBlur}
+      />
       <Button>Search</Button>
     </Bar>
   </div>
