@@ -36,7 +36,7 @@ export default () => (
     <ListHeading>PRODUCTS</ListHeading>
     <ListWrapper>
       { products.filter(p => p.id < 6).map(product => (
-        <ProductRecommendationItem key={product.id} />
+        <ProductRecommendationItem key={product.id} {...product} />
       ))}
     </ListWrapper>
   </FloatingWrapper>

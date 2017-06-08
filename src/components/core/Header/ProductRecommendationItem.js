@@ -3,7 +3,7 @@ import glamorous from 'glamorous';
 import { colors } from '../../../constants';
 
 const ItemWrapper = glamorous.div({
-  padding: '2px 20px',
+  padding: '5px 20px',
   borderBottom: '1px solid rgba(0,0,0,0.05)',
   display: 'flex',
   flexDirection: 'row',
@@ -19,17 +19,17 @@ const ItemWrapper = glamorous.div({
   },
 });
 
-export default () => (
+export default ({ imageUrl, name, price }) => (
   <ItemWrapper>
     <img
-      src="http://images.goodsmile.info/cgm/images/product/20170526/6467/45602/large/f09416643e5fb327c6de0e98cadbf025.jpg"
-      height="40px"
-      width="40px"
+      src={ imageUrl }
+      height="50px"
+      width="50px"
       alt="wow"
       style={{ objectFit: 'cover' }}
     />
-    <p style={{ color: colors.orange }}>Izumi Sagiri</p>
-    <p>Nendoroid</p>
-    <p style={{ opacity: 0.5 }}>approx. Rp.50.000</p>
+    <p style={{ color: colors.orange, flex: 1, textAlign: 'center' }}>{ name }</p>
+    <p style={{ flex: 1, textAlign: 'center' }}>Nendoroid</p>
+    <p style={{ opacity: 0.5, flex: 1, textAlign: 'right' }}>approx. { price }</p>
   </ItemWrapper>
 );
