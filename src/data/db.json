@@ -1,0 +1,92 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Nendoroid Izumi Sagiri",
+            "image_url": "http://images.goodsmile.info/cgm/images/product/20170526/6467/45602/large/f09416643e5fb327c6de0e98cadbf025.jpg",
+            "price": 550000,
+            "seller": "Mike Junaike",
+            "location": "Jakarta Barat"
+        },
+        {
+            "id": 2,
+            "name": "Nendoroid Menma",
+            "image_url": "http://images.goodsmile.info/cgm/images/product/20111026/3326/15944/large/172e3bb337b50a74afb730f53fe6492d.jpg",
+            "price": 550000,
+            "seller": "Mike Junaike",
+            "location": "Jakarta Barat"
+        },
+        {
+            "id": 3,
+            "name": "Nendoroid Rem",
+            "image_url": "http://images.goodsmile.info/cgm/images/product/20160808/5863/40599/large/4266a36138b592fb8eee2467646cba66.jpg",
+            "price": 550000,
+            "seller": "Mike Junaike",
+            "location": "Jakarta Barat"
+        },
+        {
+            "id": 4,
+            "name": "Nendoroid Megumin",
+            "image_url": "http://images.goodsmile.info/cgm/images/product/20170117/6180/43236/large/aef81a6fb8ba2ef5538f7cc5ead0f1fe.jpg",
+            "price": 550000,
+            "seller": "Mike Junaike",
+            "location": "Jakarta Barat"
+        },
+        {
+            "id": 5,
+            "name": "Nendoroid Aqua",
+            "image_url": "http://images.goodsmile.info/cgm/images/product/20160517/5675/39054/large/f552684b034efd0a95c47e0e7a989c3e.jpg",
+            "price": 550000,
+            "seller": "Mike Junaike",
+            "location": "Jakarta Barat"
+        },
+        {
+            "id": 6,
+            "name": "Nendoroid Shimakaze",
+            "image_url": "http://images.goodsmile.info/cgm/images/product/20130926/4072/26439/large/fae6e73d3f5f835d5ed2e3186fdf5a2f.jpg",
+            "price": 550000,
+            "seller": "Mike Junaike",
+            "location": "Jakarta Barat"
+        },
+        {
+            "id": 7,
+            "name": "Nendoroid K-ON Yui",
+            "image_url": "http://images.goodsmile.info/cgm/images/product/20091023/2604/7636/large/8e994738ab5a796fb398b2231b8c8020.jpg",
+            "price": 550000,
+            "seller": "Mike Junaike",
+            "location": "Jakarta Barat"
+        },
+        {
+            "id": 8,
+            "name": "Nendoroid Saitama",
+            "image_url": "http://images.goodsmile.info/cgm/images/product/20151030/5303/36152/large/18399feb363d0028d6df4a3c299a60e5.jpg",
+            "price": 550000,
+            "seller": "Mike Junaike",
+            "location": "Jakarta Barat"
+        },
+        {
+            "id": 9,
+            "name": "Nendoroid Yoshino",
+            "image_url": "http://images.goodsmile.info/cgm/images/product/20140122/4205/27758/large/0dfe3a35f4208606a093646640f794dd.jpg",
+            "price": 550000,
+            "seller": "Mike Junaike",
+            "location": "Jakarta Barat"
+        },
+        {
+            "id": 10,
+            "name": "Nendoroid Kurumi",
+            "image_url": "http://images.goodsmile.info/cgm/images/product/20141021/4694/31008/large/410e942d9607a0d6cba24d092f0f1586.jpg",
+            "price": 550000,
+            "seller": "Mike Junaike",
+            "location": "Jakarta Barat"
+        },
+        {
+            "id": 11,
+            "name": "Nendoroid Levi",
+            "image_url": "http://images.goodsmile.info/cgm/images/product/20131219/4167/27474/large/bee28160a64d715240b2d95e6e34466f.jpg",
+            "price": 550000,
+            "seller": "Mike Junaike",
+            "location": "Jakarta Barat"
+        }
+    ]
+}

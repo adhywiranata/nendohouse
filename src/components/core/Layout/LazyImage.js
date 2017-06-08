@@ -6,14 +6,14 @@ export default class LazyImage extends React.Component {
     const srcAttr = this.img.getAttribute('data-src');
     this.img.setAttribute('src', srcAttr);
     this.img.onload = () => {
-      this.loadingImg.setAttribute('style', 'display: none');
-      this.img.setAttribute('style', 'display: block');
+      this.loadingImg.style.display = 'none';
+      this.img.style.display = 'block';
     };
   }
 
   render() {
     return (
-      <picture>
+      <picture style={{ height: 300, width: '100%', overflow: 'hidden' }}>
         <div
           style={{ padding: 50, textAlign: 'center' }}
           ref={(imgContainer) => { this.loadingImg = imgContainer; }}
@@ -25,11 +25,10 @@ export default class LazyImage extends React.Component {
           />
         </div>
         <img
-          data-src="http://images.goodsmile.info/cgm/images/product/20170526/6467/45602/large/f09416643e5fb327c6de0e98cadbf025.jpg"
+          data-src={this.props.src}
           alt="izumi"
-          width="100%"
           ref={(img) => { this.img = img; }}
-          style={{ display: 'none' }}
+          style={{ display: 'none', objectFit: 'cover', width: '100%', height: 300 }}
         />
       </picture>
     );

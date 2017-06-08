@@ -51,15 +51,15 @@ const BuyButton = glamorous.button({
   },
 });
 
-export default () => (
-  <ResponsiveItem>
-    <Card style={{ position: 'relative', padding: 0, paddingBottom: 30 }}>
-      <LazyImage />
-      <Info>
-        <Title>Izumi Sagiri</Title>
-        <Seller>I Gusti Nyoman</Seller>
-        <Location>Jakarta</Location>
-        <Price>Rp.550.000</Price>
+export default ({ name, imageUrl, seller, price, location }) => (
+  <ResponsiveItem style={{ height: 'auto' }}>
+    <Card style={{ position: 'relative', padding: 0, paddingBottom: 30, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+      <LazyImage src={imageUrl} style={{ flex: 1 }} />
+      <Info style={{ flex: 1 }}>
+        <Title>{ name }</Title>
+        <Seller>{ seller }</Seller>
+        <Location>{ location }</Location>
+        <Price>Rp. { price }</Price>
       </Info>
       <BuyButton>BUY</BuyButton>
     </Card>

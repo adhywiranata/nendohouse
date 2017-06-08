@@ -4,6 +4,12 @@ import glamorous from 'glamorous';
 import Item from './Item';
 import SectionHeading from '../core/Layout/SectionHeading';
 
+import data from '../../data/db.json';
+
+const stringifiedProducts = JSON.stringify(data.products);
+const replacedKeyProduct = stringifiedProducts.replace(/image_url/g, 'imageUrl');
+const products = JSON.parse(replacedKeyProduct);
+
 const Row = glamorous.div({
   display: 'flex',
   flexDirection: 'row',
@@ -16,11 +22,7 @@ export default () => (
   <div>
     <SectionHeading>New Releases</SectionHeading>
     <Row>
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
+      { products.map(product => <Item key={product.id} {...product} />)}
     </Row>
   </div>
 );
