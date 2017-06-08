@@ -2,7 +2,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 
 import data from '../../../data/db.json';
-import SearchRecommendationItem from './SearchRecommendationItem';
+import ProductRecommendationItem from './ProductRecommendationItem';
 
 const stringifiedProducts = JSON.stringify(data.products);
 const replacedKeyProduct = stringifiedProducts.replace(/image_url/g, 'imageUrl');
@@ -36,7 +36,7 @@ export default () => (
     <ListHeading>PRODUCTS</ListHeading>
     <ListWrapper>
       { products.filter(p => p.id < 6).map(product => (
-        <SearchRecommendationItem key={product.id} />
+        <ProductRecommendationItem key={product.id} />
       ))}
     </ListWrapper>
   </FloatingWrapper>
