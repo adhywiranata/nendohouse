@@ -10,12 +10,14 @@ const ItemWrapper = glamorous.div({
   justifyContent: 'space-between',
   fontSize: '0.8em',
   color: colors.grey,
+  transition: '0.3s',
   cursor: 'pointer',
   ':nth-last-child(1)': {
     borderBottom: 0,
   },
   ':hover': {
     backgroundColor: colors.darkerWhite,
+    transition: '0.1s',
   },
 });
 
