@@ -2,8 +2,6 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { colors } from '../../../constants';
 
-import SearchRecommendations from './SearchRecommendations';
-
 const Bar = glamorous.div({
   backgroundColor: colors.white,
   padding: 5,
@@ -32,7 +30,7 @@ const Button = glamorous.button({
   outline: 'none',
 });
 
-export default ({ handleSearchBlur, handleSearchFocus, isSearchFocus }) => (
+export default ({ handleSearchBlur, handleSearchFocus, renderSearchRecommendations }) => (
   <div style={{ position: 'relative' }}>
     <Bar>
       <Search
@@ -43,6 +41,6 @@ export default ({ handleSearchBlur, handleSearchFocus, isSearchFocus }) => (
       />
       <Button>Search</Button>
     </Bar>
-    { isSearchFocus && <SearchRecommendations /> }
+    { renderSearchRecommendations() }
   </div>
 );

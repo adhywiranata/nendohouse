@@ -11,6 +11,7 @@ export default class Header extends React.Component {
     this.state = {
       isSearchFocus: false,
       renderScreenOverlay: () => (null),
+      renderSearchRecommendations: () => (null),
     };
 
     this.handleSearchFocus = this.handleSearchFocus.bind(this);
@@ -31,21 +32,33 @@ export default class Header extends React.Component {
 
   toggleScreenFocusOverlay() {
     if (this.state.isSearchFocus) {
-      Header.import('./ScreenFocusOverlay').then((TheComponent) => {
-          this.setState({
-            renderScreenOverlay: TheComponent.default,
-          });
-        }).catch((err) => {
-          console.log(err);
+      import('./ScreenFocusOverlay').then((TheComponent) => {
+        this.setState({
+          renderScreenOverlay: TheComponent.default,
         });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+      import('./SearchRecommendations').then((TheComponent) => {
+        this.setState({
+          renderSearchRecommendations: TheComponent.default,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     }
+
     this.setState({
       renderScreenOverlay: () => (null),
+      renderSearchRecommendations: () => (null),
     });
   }
 
   render() {
-    const { isSearchFocus, renderScreenOverlay } = this.state;
+    const { isSearchFocus, renderScreenOverlay, renderSearchRecommendations } = this.state;
     return (
       <div>
         <Headerbar>
@@ -54,6 +67,7 @@ export default class Header extends React.Component {
             handleSearchBlur={this.handleSearchBlur}
             handleSearchFocus={this.handleSearchFocus}
             isSearchFocus={isSearchFocus}
+            renderSearchRecommendations={renderSearchRecommendations}
           />
           <Navbar />
         </Headerbar>
