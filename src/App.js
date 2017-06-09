@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import store from './store';
-import Header from './components/core/Header/';
+import Header from './components/core/Header';
 import HomePage from './containers/HomePage';
 
 const Heads = () => (
