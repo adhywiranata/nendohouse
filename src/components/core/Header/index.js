@@ -37,18 +37,14 @@ class Header extends React.Component {
           renderScreenOverlay: TheComponent.default,
         });
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch(() => {});
 
       import('./SearchRecommendations/').then((TheComponent) => {
         this.setState({
           renderSearchRecommendations: TheComponent.default,
         });
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch(() => {});
     }
 
     this.setState({

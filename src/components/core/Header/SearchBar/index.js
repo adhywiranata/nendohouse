@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import glamorous from 'glamorous';
 import { colors } from '../../../../constants';
@@ -30,7 +31,17 @@ const Button = glamorous.button({
   outline: 'none',
 });
 
-export default ({ handleSearchBlur, handleSearchFocus, renderSearchRecommendations }) => (
+type propTypes = {
+  handleSearchBlur: func,
+  handleSearchFocus: func,
+  renderSearchRecommendations: func,
+};
+
+export default ({
+  handleSearchBlur,
+  handleSearchFocus,
+  renderSearchRecommendations,
+}: propTypes) => (
   <div style={{ position: 'relative' }}>
     <Bar>
       <Search

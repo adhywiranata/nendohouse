@@ -8,7 +8,6 @@ const stringifiedProducts = JSON.stringify(data.products);
 const replacedKeyProduct = stringifiedProducts.replace(/image_url/g, 'imageUrl');
 const products = JSON.parse(replacedKeyProduct);
 
-
 const FloatingWrapper = glamorous.div({
   position: 'absolute',
   zIndex: 9999,
@@ -18,6 +17,8 @@ const FloatingWrapper = glamorous.div({
   backgroundColor: 'white',
   borderBottomRightRadius: 5,
   borderBottomLeftRadius: 5,
+  overflow: 'hidden',
+  height: 'auto',
 });
 
 const ListHeading = glamorous.div({
