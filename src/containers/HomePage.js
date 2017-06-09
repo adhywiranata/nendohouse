@@ -4,7 +4,7 @@ import ProductList from '../components/products/List';
 import WideSection from '../components/core/Layout/WideSection';
 import CoverImg from '../images/cover.jpg';
 
-export default class HomePage extends React.Component {
+class HomePage extends React.Component {
 
   componentDidMount() {
     let currentYScroll = 0;
@@ -68,3 +68,5 @@ export default class HomePage extends React.Component {
     );
   }
 }
+
+export default () => <HomePage />;

@@ -5,7 +5,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import store from './store';
 import Header from './components/core/Header';
-import HomePage from './containers/HomePage';
+
+console.log(Header);
 
 const Heads = () => (
   <Helmet>
@@ -15,13 +16,34 @@ const Heads = () => (
   </Helmet>
 );
 
+class LazyHomePage extends React.Component {
+  state = {
+    Comp: null,
+  };
+
+  componentDidMount() {
+    import('./containers/HomePage').then((Comp) => {
+      const TheComp = Comp.default;
+      this.setState({
+        Comp: (<TheComp />),
+      });
+    });
+  }
+
+  render() {
+    return (
+      <div>{ this.state.Comp }</div>
+    );
+  }
+}
+
 export default () => (
   <Provider store={store}>
     <BrowserRouter>
       <div>
         <Heads />
         <Header />
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={() => <LazyHomePage load={'./containers/HomePage'} />} />
       </div>
     </BrowserRouter>
   </Provider>
