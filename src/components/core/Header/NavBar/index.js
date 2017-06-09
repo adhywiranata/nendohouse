@@ -1,6 +1,6 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import { colors } from '../../../constants';
+import { colors } from '../../../../constants';
 
 const Nav = glamorous.nav({
   color: colors.white,

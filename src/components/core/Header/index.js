@@ -3,7 +3,7 @@ import React from 'react';
 import Headerbar from './Headerbar';
 import Logo from './Logo';
 import SearchBar from './SearchBar';
-import Navbar from './Navbar';
+import Navbar from './NavBar';
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -41,7 +41,7 @@ export default class Header extends React.Component {
         console.log(err);
       });
 
-      import('./SearchRecommendations').then((TheComponent) => {
+      import('./SearchRecommendations/').then((TheComponent) => {
         this.setState({
           renderSearchRecommendations: TheComponent.default,
         });

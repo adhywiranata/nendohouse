@@ -1,7 +1,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 
-import data from '../../../data/db.json';
+import data from '../../../../data/db.json';
 import ProductRecommendationItem from './ProductRecommendationItem';
 
 const stringifiedProducts = JSON.stringify(data.products);
