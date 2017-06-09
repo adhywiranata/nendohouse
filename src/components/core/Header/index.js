@@ -5,7 +5,7 @@ import Logo from './Logo';
 import SearchBar from './SearchBar';
 import Navbar from './NavBar';
 
-export default class Header extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -76,3 +76,5 @@ export default class Header extends React.Component {
     );
   }
 }
+
+export default Header;

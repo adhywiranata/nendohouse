@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import glamorous from 'glamorous';
 import { colors } from '../../../../constants';
@@ -21,10 +22,12 @@ const ItemWrapper = glamorous.div({
   },
 });
 
-export default ({ imageUrl, name, price }) => (
+type itemType = { imageUrl: string, name: string, price: string};
+
+export default ({ imageUrl, name, price }: itemType) => (
   <ItemWrapper>
     <img
-      src={ imageUrl }
+      src={imageUrl}
       height="50px"
       width="50px"
       alt="wow"
