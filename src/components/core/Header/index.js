@@ -31,7 +31,7 @@ export default class Header extends React.Component {
 
   toggleScreenFocusOverlay() {
     if (this.state.isSearchFocus) {
-      import('./ScreenFocusOverlay').then((TheComponent) => {
+      Header.import('./ScreenFocusOverlay').then((TheComponent) => {
           this.setState({
             renderScreenOverlay: TheComponent.default,
           });
