@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import LazyComponent from 'cra-webpack-code-splitting';
+import LazyComponent from 'react-code-split-component';
 
 import { colors } from '../../../../constants';
 

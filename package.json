@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "babel-eslint": "^7.2.3",
-    "cra-webpack-code-splitting": "^0.2.0",
+    "react-code-split-component": "^0.1.0",
     "eslint": "^3.19.0",
     "glamor": "^2.20.25",
     "glamorous": "^3.21.0",
