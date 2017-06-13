@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyComponent from 'cra-webpack-code-splitting';
 
 import Headerbar from './Headerbar';
 import Logo from './Logo';
@@ -10,8 +11,6 @@ class Header extends React.Component {
     super(props);
     this.state = {
       isSearchFocus: false,
-      renderScreenOverlay: () => (null),
-      renderSearchRecommendations: () => (null),
     };
 
     this.handleSearchFocus = this.handleSearchFocus.bind(this);
@@ -21,40 +20,17 @@ class Header extends React.Component {
   handleSearchFocus() {
     this.setState({
       isSearchFocus: true,
-    }, this.toggleScreenFocusOverlay);
+    });
   }
 
   handleSearchBlur() {
     this.setState({
       isSearchFocus: false,
-    }, this.toggleScreenFocusOverlay);
-  }
-
-  toggleScreenFocusOverlay() {
-    if (this.state.isSearchFocus) {
-      import('./ScreenFocusOverlay').then((TheComponent) => {
-        this.setState({
-          renderScreenOverlay: TheComponent.default,
-        });
-      })
-      .catch(() => {});
-
-      import('./SearchRecommendations/').then((TheComponent) => {
-        this.setState({
-          renderSearchRecommendations: TheComponent.default,
-        });
-      })
-      .catch(() => {});
-    }
-
-    this.setState({
-      renderScreenOverlay: () => (null),
-      renderSearchRecommendations: () => (null),
     });
   }
 
   render() {
-    const { isSearchFocus, renderScreenOverlay, renderSearchRecommendations } = this.state;
+    const { isSearchFocus } = this.state;
     return (
       <div>
         <Headerbar>
@@ -63,11 +39,10 @@ class Header extends React.Component {
             handleSearchBlur={this.handleSearchBlur}
             handleSearchFocus={this.handleSearchFocus}
             isSearchFocus={isSearchFocus}
-            renderSearchRecommendations={renderSearchRecommendations}
           />
           <Navbar />
         </Headerbar>
-        { renderScreenOverlay() }
+        { isSearchFocus ? <LazyComponent load={() => import('./ScreenFocusOverlay')} /> : null }
       </div>
     );
   }

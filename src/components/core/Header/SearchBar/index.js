@@ -1,6 +1,8 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
+import LazyComponent from 'cra-webpack-code-splitting';
+
 import { colors } from '../../../../constants';
 
 const Bar = glamorous.div({
@@ -32,15 +34,15 @@ const Button = glamorous.button({
 });
 
 type propTypes = {
+  isSearchFocus: boolean,
   handleSearchBlur: func,
   handleSearchFocus: func,
-  renderSearchRecommendations: func,
 };
 
 export default ({
+  isSearchFocus,
   handleSearchBlur,
   handleSearchFocus,
-  renderSearchRecommendations,
 }: propTypes) => (
   <div style={{ position: 'relative' }}>
     <Bar>
@@ -52,6 +54,6 @@ export default ({
       />
       <Button>Search</Button>
     </Bar>
-    { renderSearchRecommendations() }
+    { isSearchFocus ? <LazyComponent load={() => import('../SearchRecommendations')} /> : null }
   </div>
 );
