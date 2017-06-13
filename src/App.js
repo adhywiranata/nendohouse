@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LazyComponent from 'cra-webpack-code-splitting';
 
 import store from './store';
@@ -21,7 +21,11 @@ export default () => (
       <div>
         <Heads />
         <Header />
-        <Route exact path="/" component={() => <LazyComponent load={() => import('./containers/HomePage')} />} />
+        <Switch>
+          <Route exact path="/" component={() => <LazyComponent load={() => import('./containers/HomePage')} />} />
+          <Route path="/search" component={() => <LazyComponent load={() => import('./containers/SearchResultPage')} />} />
+          <Route component={() => <LazyComponent load={() => import('./containers/Page404')} />} />
+        </Switch>
       </div>
     </BrowserRouter>
   </Provider>
