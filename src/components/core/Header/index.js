@@ -1,5 +1,5 @@
 import React from 'react';
-import LazyComponent from 'react-code-split-component';
+import { LazyComponent } from 'react-code-split-component';
 
 import Headerbar from './Headerbar';
 import Logo from './Logo';

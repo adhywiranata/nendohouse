@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import LazyComponent from 'react-code-split-component';
+import { LazyComponent } from 'react-code-split-component';
 
 import { colors } from '../../../../constants';
 

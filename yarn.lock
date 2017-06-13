@@ -5031,9 +5031,9 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-code-split-component@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/react-code-split-component/-/react-code-split-component-0.1.0.tgz#c1435b18357fe2d41dc63c96471e0388e1a33e99"
+react-code-split-component@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/react-code-split-component/-/react-code-split-component-0.2.2.tgz#5cc990abd10e70a19d862b527bbca755c2891f23"
   dependencies:
     babel-preset-es2015 "^6.24.1"
     babel-preset-react "^6.24.1"

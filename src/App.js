@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import LazyComponent from 'react-code-split-component';
+import { LazyComponent } from 'react-code-split-component';
 
 import store from './store';
 import Header from './components/core/Header';
