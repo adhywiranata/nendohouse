@@ -2,12 +2,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { LazyComponent } from 'react-code-split-component';
+import { LazyComponent, lazify } from 'react-code-split-component';
 
 import store from './store';
 import Header from './components/core/Header';
-
-import Page404Lazy from './containers/Page404';
 
 const Heads = () => (
   <Helmet>
@@ -26,7 +24,7 @@ export default () => (
         <Switch>
           <Route exact path="/" component={() => <LazyComponent load={() => import('./containers/HomePage')} />} />
           <Route path="/search" component={() => <LazyComponent load={() => import('./containers/SearchResultPage')} />} />
-          <Route component={Page404Lazy} />
+          <Route component={lazify(import('./containers/Page404'))} />
         </Switch>
       </div>
     </BrowserRouter>
