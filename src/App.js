@@ -7,6 +7,8 @@ import { LazyComponent } from 'react-code-split-component';
 import store from './store';
 import Header from './components/core/Header';
 
+import Page404Lazy from './containers/Page404';
+
 const Heads = () => (
   <Helmet>
     <meta charSet="utf-8" />
@@ -24,7 +26,7 @@ export default () => (
         <Switch>
           <Route exact path="/" component={() => <LazyComponent load={() => import('./containers/HomePage')} />} />
           <Route path="/search" component={() => <LazyComponent load={() => import('./containers/SearchResultPage')} />} />
-          <Route component={() => <LazyComponent load={() => import('./containers/Page404')} />} />
+          <Route component={Page404Lazy} />
         </Switch>
       </div>
     </BrowserRouter>
