@@ -1,9 +1,9 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import { colors } from '../../constants';
+import { colors } from '../../../constants';
 
-import Card from '../core/Layout/Card';
-import LazyImage from '../core/Layout/LazyImage';
+import Card from '../../core/Layout/Card';
+import LazyImage from '../../core/Layout/LazyImage';
 import { Info, Title, Seller, Location, Price } from './Info';
 
 const ResponsiveItem = glamorous.div({

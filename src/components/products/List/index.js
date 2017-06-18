@@ -2,9 +2,9 @@ import React from 'react';
 import glamorous from 'glamorous';
 
 import Item from './Item';
-import SectionHeading from '../core/Layout/SectionHeading';
+import SectionHeading from '../../core/Layout/SectionHeading';
 
-import data from '../../data/db.json';
+import data from '../../../data/db.json';
 
 const stringifiedProducts = JSON.stringify(data.products);
 const replacedKeyProduct = stringifiedProducts.replace(/image_url/g, 'imageUrl');
