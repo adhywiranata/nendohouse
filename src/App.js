@@ -24,6 +24,7 @@ export default () => (
         <Switch>
           <Route exact path="/" component={() => <LazyComponent load={() => import('./containers/HomePage')} />} />
           <Route path="/search" component={() => <LazyComponent load={() => import('./containers/SearchResultPage')} />} />
+          <Route path="/:category/:title" component={() => <LazyComponent load={() => import('./containers/DetailPage')} />} />
           <Route component={lazify(import('./containers/Page404'))} />
         </Switch>
       </div>
