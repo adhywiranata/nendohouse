@@ -1,9 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import ProductList from '../components/products/List';
 import WideSection from '../components/core/Layout/WideSection';
 
-export default class SearchResultPage extends React.Component {
+import { selectAllProducts } from '../reducers/productReducer';
+import { fetchProducts, fetchCategories } from '../actions';
+
+class SearchResultPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,16 +15,30 @@ export default class SearchResultPage extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.props.fetchProducts();
+  }
+
   render() {
     return (
       <div style={{ paddingTop: 60 }}>
         <WideSection>
-          <ProductList />
-        </WideSection>
-        <WideSection>
-          <ProductList />
+          <ProductList
+            products={this.props.products}
+            isProductsFetching={this.props.isProductsFetching}/>
         </WideSection>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  products: selectAllProducts(state.products, state.categories),
+  isProductsFetching: state.products.isFetching,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchProducts: () => dispatch(fetchProducts()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchResultPage);

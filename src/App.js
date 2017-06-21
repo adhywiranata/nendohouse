@@ -28,6 +28,7 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={props => <LazyComponent load={() => import('./containers/HomePage')} {...props} />} />
           <Route path="/search" component={props => <LazyComponent load={() => import('./containers/SearchResultPage')} {...props} />} />
+          <Route exact path="/products" component={props => <LazyComponent load={() => import('./containers/SearchResultPage')} {...props} />} />
           <Route exact path="/products/:category" component={props => <LazyComponent load={() => import('./containers/CategoryProductPage')} {...props} />} />
           <Route path="/products/:category/:title" component={props => <LazyComponent load={() => import('./containers/DetailPage')} {...props} />} />
           <Route component={lazify(import('./containers/Page404'))} />
