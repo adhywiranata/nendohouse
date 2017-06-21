@@ -5,6 +5,7 @@ import { fetchProductsLoading } from '../actions/productActions';
 
 function* fetchProducts() {
   yield put(fetchProductsLoading());
+  console.log('called fetchProducts saga!');
   // try {
   // } catch(e) {
   //   // yield put()
