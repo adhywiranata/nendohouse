@@ -12,4 +12,15 @@ export default (state = initialState, action) => {
   }
 };
 
-export const selectAllProducts = productsData => productsData.data;
+// Selector to Map Category object to Products
+const selectCategoryById = (categories, categoryId) => {
+  const selectedIndex = categories.map(category => category.id).indexOf(categoryId);
+  return categories[selectedIndex];
+};
+const mapCategoryToProduct = (product, categories) => (
+  { ...product, category: selectCategoryById(categories, product.category_id) }
+);
+export const selectAllProducts = (productsData, categoriesData) => {
+  const categories = categoriesData.data;
+  return productsData.data.map(product => mapCategoryToProduct(product, categories));
+};

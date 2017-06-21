@@ -52,9 +52,11 @@ const BuyButton = glamorous.button({
   },
 });
 
-export default ({ name, imageUrl, seller, price, location }) => (
+const toSlug = sentence => sentence.toLowerCase().split(' ').join('-');
+
+export default ({ name, imageUrl, seller, price, location, category = { name: '', slug: '' } }) => (
   <ResponsiveItem style={{ height: 'auto' }}>
-    <Link to="/nendoroid/izumi-sagiri" style={{ textDecoration: 'none' }}>
+    <Link to={`/${category.slug}/${toSlug(name)}`} style={{ textDecoration: 'none' }}>
       <Card style={{ position: 'relative', padding: 0, paddingBottom: 30, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         <LazyImage src={imageUrl} style={{ flex: 1 }} />
         <Info style={{ flex: 1 }}>

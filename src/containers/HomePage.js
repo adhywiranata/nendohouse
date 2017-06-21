@@ -76,8 +76,7 @@ class HomePage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  products: selectAllProducts(state.products),
-  categories: selectAllCategories(state.categories),
+  products: selectAllProducts(state.products, state.categories),
   isProductsFetching: state.products.isFetching,
 });
 
