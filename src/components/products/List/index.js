@@ -3,12 +3,12 @@ import glamorous from 'glamorous';
 
 import Item from './Item';
 import SectionHeading from '../../core/Layout/SectionHeading';
-
-import data from '../../../data/db.json';
-
-const stringifiedProducts = JSON.stringify(data.products);
-const replacedKeyProduct = stringifiedProducts.replace(/image_url/g, 'imageUrl');
-const products = JSON.parse(replacedKeyProduct);
+//
+// import data from '../../../data/db.json';
+//
+// const stringifiedProducts = JSON.stringify(data.products);
+// const replacedKeyProduct = stringifiedProducts.replace(/image_url/g, 'imageUrl');
+// const products = JSON.parse(replacedKeyProduct);
 
 const Row = glamorous.div({
   display: 'flex',
@@ -18,9 +18,10 @@ const Row = glamorous.div({
   flexWrap: 'wrap',
 });
 
-export default () => (
+export default ({ products, isProductsFetching }) => (
   <div>
     <SectionHeading>New Releases</SectionHeading>
+    {isProductsFetching && <h2>Loading...</h2>}
     <Row>
       { products.map(product => <Item key={product.id} {...product} />)}
     </Row>

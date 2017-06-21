@@ -1,11 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { selectAllProducts } from '../reducers/productReducer';
 
 import ProductList from '../components/products/List';
 import WideSection from '../components/core/Layout/WideSection';
 import CoverImg from '../images/cover.jpg';
 
 class HomePage extends React.Component {
-
   componentDidMount() {
     let currentYScroll = 0;
     const parallaxCover = document.getElementById('parallaxCover');
@@ -59,14 +61,16 @@ class HomePage extends React.Component {
           </div>
         </div>
         <WideSection>
-          <ProductList />
-        </WideSection>
-        <WideSection>
-          <ProductList />
+          <ProductList products={this.props.products} isProductsFetching={this.props.isProductsFetching} />
         </WideSection>
       </div>
     );
   }
 }
 
-export default () => <HomePage />;
+const mapStateToProps = state => ({
+  products: selectAllProducts(state.products),
+  isProductsFetching: state.products.isFetching,
+});
+
+export default connect(mapStateToProps, null)(HomePage);
