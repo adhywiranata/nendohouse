@@ -14,6 +14,11 @@ export const fetchProductsLoading = () => ({
 });
 
 export const fetchProductsSuccess = (products) => ({
-  type: FETCH_PRODUCTS_LOADING,
+  type: FETCH_PRODUCTS_SUCCESS,
   payload: products,
+});
+
+export const fetchProductsFailed = (err) => ({
+  type: FETCH_PRODUCTS_FAILED,
+  payload: err,
 });

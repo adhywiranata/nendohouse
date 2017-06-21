@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Provider } from 'react-redux';
-import firebase from 'firebase';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { LazyComponent, lazify } from 'react-code-split-component';
 
