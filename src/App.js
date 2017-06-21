@@ -5,7 +5,7 @@ import firebase from 'firebase';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { LazyComponent, lazify } from 'react-code-split-component';
 
-import store from './store';
+import store from './configureStore';
 import Header from './components/core/Header';
 
 const Heads = () => (
