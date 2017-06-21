@@ -1,6 +1,7 @@
-import { fetchProducts, fetchProductsLoading } from './productActions';
+import { fetchProducts } from './productActions';
+import { fetchCategories } from './categoryActions';
 
 export {
   fetchProducts,
-  fetchProductsLoading,
+  fetchCategories,
 };

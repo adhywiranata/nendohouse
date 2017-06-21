@@ -6,7 +6,7 @@ import {
   fetchCategoriesLoading,
   fetchCategoriesSuccess,
   fetchCategoriesFailed,
-} from '../actions/productActions';
+} from '../actions/categoryActions';
 
 const fetchAllCategories = () => (
   database.ref('categories').once('value').then(snapshot => snapshot.val())
