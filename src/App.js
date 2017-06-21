@@ -15,32 +15,21 @@ const Heads = () => (
   </Helmet>
 );
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      products: {},
-    };
-  }
-
-  render() {
-    return (
-      <Provider store={store}>
-        <BrowserRouter>
-          <div>
-            <Heads />
-            <Header />
-            <Switch>
-              <Route exact path="/" component={props => <LazyComponent load={() => import('./containers/HomePage')} {...props} />} />
-              <Route path="/search" component={props => <LazyComponent load={() => import('./containers/SearchResultPage')} {...props} />} />
-              <Route path="/:category/:title" component={props => <LazyComponent load={() => import('./containers/DetailPage')} {...props} />} />
-              <Route component={lazify(import('./containers/Page404'))} />
-            </Switch>
-          </div>
-        </BrowserRouter>
-      </Provider>
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <BrowserRouter>
+      <div>
+        <Heads />
+        <Header />
+        <Switch>
+          <Route exact path="/" component={props => <LazyComponent load={() => import('./containers/HomePage')} {...props} />} />
+          <Route path="/search" component={props => <LazyComponent load={() => import('./containers/SearchResultPage')} {...props} />} />
+          <Route path="/:category/:title" component={props => <LazyComponent load={() => import('./containers/DetailPage')} {...props} />} />
+          <Route component={lazify(import('./containers/Page404'))} />
+        </Switch>
+      </div>
+    </BrowserRouter>
+  </Provider>
+);
 
 export default App;
