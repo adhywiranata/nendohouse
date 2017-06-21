@@ -1,11 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
 import { LazyComponent, lazify } from 'react-code-split-component';
+import createHistory from 'history/createBrowserHistory';
 
 import store from './configureStore';
 import Header from './components/core/Header';
+
+const history = createHistory();
 
 const Heads = () => (
   <Helmet>
@@ -17,19 +21,19 @@ const Heads = () => (
 
 const App = () => (
   <Provider store={store}>
-    <BrowserRouter>
+    <ConnectedRouter history={history}>
       <div>
         <Heads />
         <Header />
         <Switch>
           <Route exact path="/" component={props => <LazyComponent load={() => import('./containers/HomePage')} {...props} />} />
           <Route path="/search" component={props => <LazyComponent load={() => import('./containers/SearchResultPage')} {...props} />} />
-          <Route exact path="/products/:category" component={props => <LazyComponent load={() => import('./containers/CategoryProductPage')} {...props} />} />  
+          <Route exact path="/products/:category" component={props => <LazyComponent load={() => import('./containers/CategoryProductPage')} {...props} />} />
           <Route path="/products/:category/:title" component={props => <LazyComponent load={() => import('./containers/DetailPage')} {...props} />} />
           <Route component={lazify(import('./containers/Page404'))} />
         </Switch>
       </div>
-    </BrowserRouter>
+    </ConnectedRouter>
   </Provider>
 );
 
