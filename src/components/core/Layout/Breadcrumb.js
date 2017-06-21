@@ -39,17 +39,20 @@ const Li = glamorous.li({
   },
 });
 
-export default () => (
+const wordToCapital = word => word[0].toUpperCase() + word.slice(1, word.length);
+const capitalize = sentence => sentence.split(' ').map(word => wordToCapital(word)).join(' ');
+
+export default ({ category, title }) => (
   <Wrapper>
     <Ul>
       <Li>
-        <Link to="/">Home</Link>
+        <Link to="/" style={{ color: colors.grey }}>Home</Link>
       </Li>
       <Li>
-        <Link to="/">Nendoroid</Link>
+        <Link to={`/${category}`} style={{ color: colors.grey }}>{ category }</Link>
       </Li>
       <Li>
-        <span>izumi sagiri</span>
+        <span style={{ color: colors.black }}>{ capitalize(title.split('-').join(' ')) }</span>
       </Li>
     </Ul>
   </Wrapper>

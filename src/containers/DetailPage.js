@@ -13,11 +13,12 @@ export default class DetailPage extends React.Component {
   }
 
   render() {
+    const { category, title } = this.props.match.params;
     return (
       <div style={{ paddingTop: 80 }}>
         <WideSection>
           <div>
-            <Breadcrumb />
+            <Breadcrumb category={category} title={title} />
             <ProductDetails />
           </div>
         </WideSection>
