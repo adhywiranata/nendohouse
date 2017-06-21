@@ -1,7 +1,8 @@
 import React from 'react';
 import glamorous from 'glamorous';
-import { colors } from '../../../constants';
+import { Link } from 'react-router-dom';
 
+import { colors } from '../../../constants';
 import Card from '../../core/Layout/Card';
 import LazyImage from '../../core/Layout/LazyImage';
 import { Info, Title, Seller, Location, Price } from './Info';
@@ -53,15 +54,17 @@ const BuyButton = glamorous.button({
 
 export default ({ name, imageUrl, seller, price, location }) => (
   <ResponsiveItem style={{ height: 'auto' }}>
-    <Card style={{ position: 'relative', padding: 0, paddingBottom: 30, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-      <LazyImage src={imageUrl} style={{ flex: 1 }} />
-      <Info style={{ flex: 1 }}>
-        <Title>{ name }</Title>
-        <Seller>{ seller }</Seller>
-        <Location>{ location }</Location>
-        <Price>Rp.{ price }</Price>
-      </Info>
-      <BuyButton>BUY</BuyButton>
-    </Card>
+    <Link to="/nendoroid/izumi-sagiri">
+      <Card style={{ position: 'relative', padding: 0, paddingBottom: 30, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        <LazyImage src={imageUrl} style={{ flex: 1 }} />
+        <Info style={{ flex: 1 }}>
+          <Title>{ name }</Title>
+          <Seller>{ seller }</Seller>
+          <Location>{ location }</Location>
+          <Price>Rp.{ price }</Price>
+        </Info>
+        <BuyButton>BUY</BuyButton>
+      </Card>
+    </Link>
   </ResponsiveItem>
 );
