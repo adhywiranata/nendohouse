@@ -12,3 +12,8 @@ export const fetchProducts = () => ({
 export const fetchProductsLoading = () => ({
   type: FETCH_PRODUCTS_LOADING,
 });
+
+export const fetchProductsSuccess = (products) => ({
+  type: FETCH_PRODUCTS_LOADING,
+  payload: products,
+});

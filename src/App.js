@@ -25,21 +25,9 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    const config = {
-      apiKey: 'AIzaSyD1W_bujrLv5GR3WAP9lh6K1x5JDliZENg',
-      authDomain: 'nendohouse.firebaseapp.com',
-      databaseURL: 'https://nendohouse.firebaseio.com',
-      projectId: 'nendohouse',
-      storageBucket: 'nendohouse.appspot.com',
-      messagingSenderId: '1028604632366',
-    };
-    firebase.initializeApp(config);
   }
 
   componentDidMount() {
-    const dat = firebase.database().ref('products').once('value').then((snapshot) => {
-      console.log(snapshot.val());
-    });
   }
 
   render() {
