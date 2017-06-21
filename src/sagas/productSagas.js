@@ -4,11 +4,9 @@ import database from '../database';
 import { FETCH_PRODUCTS } from '../actions/constants';
 import { fetchProductsLoading, fetchProductsSuccess, fetchProductsFailed } from '../actions/productActions';
 
-const connectDB = () => {
-  return database.ref('products').once('value').then((snapshot) => {
-    return snapshot.val();
-  });
-};
+const connectDB = () => (
+  database.ref('products').once('value').then(snapshot => snapshot.val())
+);
 
 function* fetchProducts() {
   yield put(fetchProductsLoading());
