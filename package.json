@@ -15,6 +15,7 @@
   "dependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^3.19.0",
+    "firebase": "^4.1.2",
     "glamor": "^2.20.25",
     "glamorous": "^3.21.0",
     "lodash": "^4.17.4",
