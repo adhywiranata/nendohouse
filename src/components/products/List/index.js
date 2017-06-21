@@ -4,14 +4,9 @@ import glamorous from 'glamorous';
 import Item from './Item';
 import SectionHeading from '../../core/Layout/SectionHeading';
 
-import data from '../../../data/db.json';
-
-const convertUrl = (products) => {
-  return JSON.parse(JSON.stringify(products).replace(/image_url/g, 'imageUrl'));
-}
-// const stringifiedProducts = JSON.stringify(data.products);
-// const replacedKeyProduct = stringifiedProducts.replace(/image_url/g, 'imageUrl');
-// const productsData = JSON.parse(replacedKeyProduct);
+const convertUrl = products => (
+  JSON.parse(JSON.stringify(products).replace(/image_url/g, 'imageUrl'))
+);
 
 const Row = glamorous.div({
   display: 'flex',
