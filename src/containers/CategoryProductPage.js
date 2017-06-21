@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { selectAllProducts } from '../reducers/productReducer';
+import { selectProductsByCategory } from '../reducers/productReducer';
 import { fetchProducts, fetchCategories } from '../actions';
 
 import ProductList from '../components/products/List';
@@ -27,10 +27,13 @@ class HomePage extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  products: selectAllProducts(state.products, state.categories),
-  isProductsFetching: state.products.isFetching,
-});
+const mapStateToProps = (state) => {
+  const categoryName = state.router.location.pathname.split('/')[2];
+  return {
+    products: selectProductsByCategory(state.products, state.categories, categoryName),
+    isProductsFetching: state.products.isFetching,
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchProducts: () => dispatch(fetchProducts()),
