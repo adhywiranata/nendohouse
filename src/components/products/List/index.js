@@ -6,9 +6,12 @@ import SectionHeading from '../../core/Layout/SectionHeading';
 
 import data from '../../../data/db.json';
 
-const stringifiedProducts = JSON.stringify(data.products);
-const replacedKeyProduct = stringifiedProducts.replace(/image_url/g, 'imageUrl');
-const productsData = JSON.parse(replacedKeyProduct);
+const convertUrl = (products) => {
+  return JSON.parse(JSON.stringify(products).replace(/image_url/g, 'imageUrl'));
+}
+// const stringifiedProducts = JSON.stringify(data.products);
+// const replacedKeyProduct = stringifiedProducts.replace(/image_url/g, 'imageUrl');
+// const productsData = JSON.parse(replacedKeyProduct);
 
 const Row = glamorous.div({
   display: 'flex',
@@ -23,7 +26,7 @@ export default ({ products, isProductsFetching }) => (
     <SectionHeading>New Releases</SectionHeading>
     {isProductsFetching && <h2>Loading</h2>}
     <Row>
-      { products.map(product => <Item key={product.id} {...product} />)}
+      { convertUrl(products).map(product => <Item key={product.id} {...product} />)}
     </Row>
   </div>
 );
