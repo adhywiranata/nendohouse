@@ -54,7 +54,7 @@ const BuyButton = glamorous.button({
 
 export default ({ name, imageUrl, seller, price, location }) => (
   <ResponsiveItem style={{ height: 'auto' }}>
-    <Link to="/nendoroid/izumi-sagiri">
+    <Link to="/nendoroid/izumi-sagiri" style={{ textDecoration: 'none' }}>
       <Card style={{ position: 'relative', padding: 0, paddingBottom: 30, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         <LazyImage src={imageUrl} style={{ flex: 1 }} />
         <Info style={{ flex: 1 }}>
