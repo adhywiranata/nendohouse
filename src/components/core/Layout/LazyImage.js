@@ -3,7 +3,6 @@ import loadingSvg from '../../../images/loading.svg';
 
 export default class LazyImage extends React.Component {
   componentDidMount() {
-    console.log(this.props.src);
     const srcAttr = this.img.getAttribute('data-src');
     this.img.setAttribute('src', srcAttr);
     this.img.onload = () => {
