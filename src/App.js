@@ -23,12 +23,6 @@ class App extends React.Component {
     };
   }
 
-  componentWillMount() {
-  }
-
-  componentDidMount() {
-  }
-
   render() {
     return (
       <Provider store={store}>
@@ -37,9 +31,9 @@ class App extends React.Component {
             <Heads />
             <Header />
             <Switch>
-              <Route exact path="/" component={() => <LazyComponent load={() => import('./containers/HomePage')} />} />
-              <Route path="/search" component={() => <LazyComponent load={() => import('./containers/SearchResultPage')} />} />
-              <Route path="/:category/:title" component={() => <LazyComponent load={() => import('./containers/DetailPage')} />} />
+              <Route exact path="/" component={props => <LazyComponent load={() => import('./containers/HomePage')} {...props} />} />
+              <Route path="/search" component={props => <LazyComponent load={() => import('./containers/SearchResultPage')} {...props} />} />
+              <Route path="/:category/:title" component={props => <LazyComponent load={() => import('./containers/DetailPage')} {...props} />} />
               <Route component={lazify(import('./containers/Page404'))} />
             </Switch>
           </div>
