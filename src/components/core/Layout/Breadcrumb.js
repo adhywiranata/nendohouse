@@ -49,7 +49,7 @@ export default ({ category, title }) => (
         <Link to="/" style={{ color: colors.grey }}>Home</Link>
       </Li>
       <Li>
-        <Link to={`/${category}`} style={{ color: colors.grey }}>{ category }</Link>
+        <Link to={`/products/${category}`} style={{ color: colors.grey }}>{ category }</Link>
       </Li>
       <Li>
         <span style={{ color: colors.black }}>{ capitalize(title.split('-').join(' ')) }</span>
