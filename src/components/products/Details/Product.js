@@ -12,7 +12,7 @@ export default () => (
       <div style={{ padding: 10, display: 'flex', flexDirection: 'column' }}>
         <h2>Nendoroid Izumi Sagiri</h2>
         <span>wow wow yeah yeah</span>
-        <span>Rp. 50.000</span>
+        <span>{'Rp. 50.000'}</span>
         <span>Stok: 50</span>
         <div>
           <button>+</button>
