@@ -23,7 +23,8 @@ const mapCategoryToProduct = (product, categories) => (
 
 export const selectAllProducts = (productsData, categoriesData) => {
   const categories = categoriesData.data;
-  return productsData.data.map(product => mapCategoryToProduct(product, categories));
+  console.log(productsData.data);
+  return productsData.data.map(product => product);
 };
 
 export const selectProductsByCategory = (productsData, categoriesData, categoryName) => {
