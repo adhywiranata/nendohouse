@@ -12,7 +12,6 @@ import CoverImg from '../images/cover.jpg';
 class HomePage extends React.Component {
   componentDidMount() {
     this.props.fetchProducts();
-    this.props.fetchCategories();
     let currentYScroll = 0;
     const parallaxCover = document.getElementById('parallaxCover');
     window.addEventListener('scroll', () => {
@@ -82,7 +81,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchProducts: () => dispatch(fetchProducts()),
-  fetchCategories: () => dispatch(fetchCategories()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
