@@ -35,7 +35,7 @@ class HomePage extends React.Component {
 const mapStateToProps = (state) => {
   const categoryName = state.router.location.pathname.split('/')[2];
   return {
-    products: selectProductsByCategory(state.products, state.categories, categoryName),
+    products: selectProductsByCategory(state.products, categoryName),
     isProductsFetching: state.products.isFetching,
   };
 };
