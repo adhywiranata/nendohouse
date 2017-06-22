@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Breadcrumb from '../components/core/Layout/Breadcrumb';
 import { selectProductsByCategory } from '../reducers/productReducer';
 import { fetchProducts, fetchCategories } from '../actions';
 
@@ -14,13 +15,17 @@ class HomePage extends React.Component {
   }
 
   render() {
+    const { category, title } = this.props.match.params;
     return (
-      <div style={{ paddingTop: 60 }}>
+      <div style={{ paddingTop: 80 }}>
         <WideSection>
-          <ProductList
-            products={this.props.products}
-            isProductsFetching={this.props.isProductsFetching}
-          />
+          <div>
+            <Breadcrumb category={category} />
+            <ProductList
+              products={this.props.products}
+              isProductsFetching={this.props.isProductsFetching}
+            />
+          </div>
         </WideSection>
       </div>
     );
@@ -32,7 +37,7 @@ const mapStateToProps = (state) => {
   return {
     products: selectProductsByCategory(state.products, state.categories, categoryName),
     isProductsFetching: state.products.isFetching,
-  }
+  };
 };
 
 const mapDispatchToProps = dispatch => ({

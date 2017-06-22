@@ -51,9 +51,11 @@ export default ({ category, title }) => (
       <Li>
         <Link to={`/products/${category}`} style={{ color: colors.grey }}>{ category }</Link>
       </Li>
-      <Li>
-        <span style={{ color: colors.black }}>{ capitalize(title.split('-').join(' ')) }</span>
-      </Li>
+      { title && (
+        <Li>
+          <span style={{ color: colors.black }}>{ capitalize(title.split('-').join(' ')) }</span>
+        </Li>
+      )}
     </Ul>
   </Wrapper>
 );
