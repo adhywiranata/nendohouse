@@ -1,6 +1,4 @@
 import React from 'react';
-import _ from 'lodash';
-import moment from 'moment';
 
 import WideSection from '../components/core/Layout/WideSection';
 
