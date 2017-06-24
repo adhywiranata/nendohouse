@@ -31,11 +31,11 @@ const ListWrapper = glamorous.div({
   paddingBottom: 5,
 });
 
-export default () => (
+export default ({ products }) => (
   <FloatingWrapper>
     <ListHeading>PRODUCTS</ListHeading>
     <ListWrapper>
-      { [].filter(p => p.id < 6).map(product => (
+      { products.filter(p => p.id < 6).map(product => (
         <ProductRecommendationItem key={product.id} {...product} />
       ))}
     </ListWrapper>

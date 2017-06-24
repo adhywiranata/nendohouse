@@ -14,6 +14,7 @@ export default ({ products, isSearchFocus, handleSearchFocus, handleSearchBlur }
         handleSearchBlur={handleSearchBlur}
         handleSearchFocus={handleSearchFocus}
         isSearchFocus={isSearchFocus}
+        products={products}
       />
       <Navbar />
     </Headerbar>

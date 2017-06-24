@@ -40,6 +40,7 @@ type propTypes = {
 };
 
 export default ({
+  products,
   isSearchFocus,
   handleSearchBlur,
   handleSearchFocus,
@@ -54,6 +55,6 @@ export default ({
       />
       <Button>Search</Button>
     </Bar>
-    { isSearchFocus ? <LazyComponent load={() => import('../SearchRecommendations')} /> : null }
+    { isSearchFocus ? <LazyComponent load={() => import('../SearchRecommendations')} products={products} /> : null }
   </div>
 );
