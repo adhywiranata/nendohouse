@@ -7,7 +7,7 @@ import { LazyComponent, lazify } from 'react-code-split-component';
 import createHistory from 'history/createBrowserHistory';
 
 import store from './configureStore';
-import Header from './components/core/Header';
+import HeaderWrapper from './containers/sections/HeaderWrapper';
 
 const history = createHistory();
 
@@ -24,7 +24,7 @@ const App = () => (
     <ConnectedRouter history={history}>
       <div>
         <Heads />
-        <Header />
+        <HeaderWrapper />
         <Switch>
           <Route exact path="/" component={props => <LazyComponent load={() => import('./containers/pages/HomePage')} {...props} />} />
           <Route path="/search" component={props => <LazyComponent load={() => import('./containers/pages/SearchResultPage')} {...props} />} />
