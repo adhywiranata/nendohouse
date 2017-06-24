@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Header from '../../components/core/Header';
 import { selectAllProducts } from '../../reducers/productReducer';
+import { setHeaderSearchKeyword } from '../../actions';
 
 class HeaderWrapper extends React.Component {
   constructor(props) {
@@ -24,9 +25,7 @@ class HeaderWrapper extends React.Component {
   }
 
   handleSearchInput(searchKeyword) {
-    this.setState({
-      searchKeyword,
-    });
+    this.props.setSearchKeyword(searchKeyword);
   }
 
   handleSearchBlur() {
@@ -39,7 +38,7 @@ class HeaderWrapper extends React.Component {
     return (
       <Header
         products={this.props.products}
-        searchKeyword={this.state.searchKeyword}
+        searchKeyword={this.props.searchKeyword}
         isSearchFocus={this.state.isSearchFocus}
         handleSearchFocus={this.handleSearchFocus}
         handleSearchInput={this.handleSearchInput}
@@ -51,6 +50,11 @@ class HeaderWrapper extends React.Component {
 
 const mapStateToProps = state => ({
   products: selectAllProducts(state.products),
+  searchKeyword: state.headerSearch.searchKeyword,
 });
 
-export default connect(mapStateToProps, null)(HeaderWrapper);
+const mapDispatchToProps = dispatch => ({
+  setSearchKeyword: searchKeyword => dispatch(setHeaderSearchKeyword(searchKeyword)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderWrapper);
