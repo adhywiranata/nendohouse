@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import glamorous from 'glamorous';
-import { LazyComponent } from 'react-code-split-component';
 
 import SearchRecommendations from '../SearchRecommendations';
 import { colors } from '../../../../constants';
@@ -59,14 +58,6 @@ export default ({
       />
       <Button>Search</Button>
     </Bar>
-    {/*
-      isSearchFocus ?
-        <LazyComponent
-          load={() => import('../SearchRecommendations')}
-          products={products}
-          searchKeyword={searchKeyword}
-        />
-        : null */ }
     { isSearchFocus ? (
       <SearchRecommendations products={products} searchKeyword={searchKeyword} />) : null }
   </div>
