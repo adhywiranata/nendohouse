@@ -29,9 +29,9 @@ const ListWrapper = glamorous.div({
   paddingBottom: 5,
 });
 
-export default ({ products }) => (
+export default ({ products, searchKeyword }) => (
   <FloatingWrapper>
-    <ListHeading>PRODUCTS</ListHeading>
+    <ListHeading>PRODUCTS - Searching for {searchKeyword} </ListHeading>
     <ListWrapper>
       { convertProductImageUrl(products).filter(p => p.id < 6).map(product => (
         <ProductRecommendationItem key={product.id} {...product} />

@@ -6,15 +6,24 @@ import Logo from './Logo';
 import SearchBar from './SearchBar';
 import Navbar from './NavBar';
 
-export default ({ products, isSearchFocus, handleSearchFocus, handleSearchBlur }) => (
+export default ({
+  products,
+  searchKeyword,
+  isSearchFocus,
+  handleSearchFocus,
+  handleSearchInput,
+  handleSearchBlur,
+}) => (
   <div>
     <Headerbar>
       <Logo>NENDOHOUSE</Logo>
       <SearchBar
-        handleSearchBlur={handleSearchBlur}
-        handleSearchFocus={handleSearchFocus}
+        searchKeyword={searchKeyword}
         isSearchFocus={isSearchFocus}
         products={products}
+        handleSearchBlur={handleSearchBlur}
+        handleSearchInput={handleSearchInput}
+        handleSearchFocus={handleSearchFocus}
       />
       <Navbar />
     </Headerbar>

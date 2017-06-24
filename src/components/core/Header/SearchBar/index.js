@@ -41,8 +41,10 @@ type propTypes = {
 
 export default ({
   products,
+  searchKeyword,
   isSearchFocus,
   handleSearchBlur,
+  handleSearchInput,
   handleSearchFocus,
 }: propTypes) => (
   <div style={{ position: 'relative' }}>
@@ -51,10 +53,11 @@ export default ({
         type="text"
         placeholder="Find your future waifus here..."
         onFocus={handleSearchFocus}
+        onChange={(e) => handleSearchInput(e.target.value)}
         onBlur={handleSearchBlur}
       />
       <Button>Search</Button>
     </Bar>
-    { isSearchFocus ? <LazyComponent load={() => import('../SearchRecommendations')} products={products} /> : null }
+    { isSearchFocus ? <LazyComponent load={() => import('../SearchRecommendations')} products={products} searchKeyword={searchKeyword} /> : null }
   </div>
 );
