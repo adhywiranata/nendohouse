@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { selectAllProducts } from '../reducers/productReducer';
-import { selectAllCategories } from '../reducers/categoryReducer';
-import { fetchProducts, fetchCategories } from '../actions';
+import { selectAllProducts } from '../../reducers/productReducer';
+import { selectAllCategories } from '../../reducers/categoryReducer';
+import { fetchProducts, fetchCategories } from '../../actions';
 
-import ProductList from '../components/products/List';
-import WideSection from '../components/core/Layout/WideSection';
-import CoverImg from '../images/cover.jpg';
+import ProductList from '../../components/products/List';
+import WideSection from '../../components/core/Layout/WideSection';
+import CoverImg from '../../images/cover.jpg';
 
 class HomePage extends React.Component {
   componentDidMount() {

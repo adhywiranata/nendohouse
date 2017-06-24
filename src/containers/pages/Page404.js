@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WideSection from '../components/core/Layout/WideSection';
+import WideSection from '../../components/core/Layout/WideSection';
 
 export default () => (
   <div style={{ paddingTop: 60 }}>

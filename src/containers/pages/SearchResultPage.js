@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import ProductList from '../components/products/List';
-import WideSection from '../components/core/Layout/WideSection';
+import ProductList from '../../components/products/List';
+import WideSection from '../../components/core/Layout/WideSection';
 
-import { selectAllProducts } from '../reducers/productReducer';
-import { fetchProducts } from '../actions';
+import { selectAllProducts } from '../../reducers/productReducer';
+import { fetchProducts } from '../../actions';
 
 class SearchResultPage extends React.Component {
   constructor(props) {

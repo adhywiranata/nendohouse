@@ -1,8 +1,8 @@
 import React from 'react';
 
-import WideSection from '../components/core/Layout/WideSection';
-import Breadcrumb from '../components/core/Layout/Breadcrumb';
-import ProductDetails from '../components/products/Details';
+import WideSection from '../../components/core/Layout/WideSection';
+import Breadcrumb from '../../components/core/Layout/Breadcrumb';
+import ProductDetails from '../../components/products/Details';
 
 export default class DetailPage extends React.Component {
   constructor(props) {

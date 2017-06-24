@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Breadcrumb from '../components/core/Layout/Breadcrumb';
-import { selectProductsByCategory } from '../reducers/productReducer';
-import { fetchProducts } from '../actions';
+import Breadcrumb from '../../components/core/Layout/Breadcrumb';
+import { selectProductsByCategory } from '../../reducers/productReducer';
+import { fetchProducts } from '../../actions';
 
-import ProductList from '../components/products/List';
-import WideSection from '../components/core/Layout/WideSection';
+import ProductList from '../../components/products/List';
+import WideSection from '../../components/core/Layout/WideSection';
 
 class HomePage extends React.Component {
   componentDidMount() {
