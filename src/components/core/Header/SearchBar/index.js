@@ -3,6 +3,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import { LazyComponent } from 'react-code-split-component';
 
+import SearchRecommendations from '../SearchRecommendations';
 import { colors } from '../../../../constants';
 
 const Bar = glamorous.div({
@@ -58,6 +59,15 @@ export default ({
       />
       <Button>Search</Button>
     </Bar>
-    { isSearchFocus ? <LazyComponent load={() => import('../SearchRecommendations')} products={products} searchKeyword={searchKeyword} /> : null }
+    {/*
+      isSearchFocus ?
+        <LazyComponent
+          load={() => import('../SearchRecommendations')}
+          products={products}
+          searchKeyword={searchKeyword}
+        />
+        : null */ }
+    { isSearchFocus ? (
+      <SearchRecommendations products={products} searchKeyword={searchKeyword} />) : null }
   </div>
 );
