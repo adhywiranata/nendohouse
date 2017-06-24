@@ -1,12 +1,11 @@
 import React from 'react';
 import glamorous from 'glamorous';
 
-import data from '../../../../data/db.json';
 import ProductRecommendationItem from './ProductRecommendationItem';
 
-const stringifiedProducts = JSON.stringify(data.products);
-const replacedKeyProduct = stringifiedProducts.replace(/image_url/g, 'imageUrl');
-const products = JSON.parse(replacedKeyProduct);
+// const stringifiedProducts = JSON.stringify(data.products);
+// const replacedKeyProduct = stringifiedProducts.replace(/image_url/g, 'imageUrl');
+// const products = JSON.parse(replacedKeyProduct);
 
 const FloatingWrapper = glamorous.div({
   position: 'absolute',
@@ -36,7 +35,7 @@ export default () => (
   <FloatingWrapper>
     <ListHeading>PRODUCTS</ListHeading>
     <ListWrapper>
-      { products.filter(p => p.id < 6).map(product => (
+      { [].filter(p => p.id < 6).map(product => (
         <ProductRecommendationItem key={product.id} {...product} />
       ))}
     </ListWrapper>
