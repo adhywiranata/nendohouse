@@ -13,6 +13,9 @@ export default (state = initialState, action) => {
 };
 
 export const selectAllProducts = productsData => productsData.data;
+export const selectProductsBySearchKeyword = (productsData, searchKeyword) => {
+  return productsData.data.filter(product => product.name.includes(searchKeyword));
+};
 export const selectProductsByCategory = (productsData, categoryName) => {
   return productsData.data.filter((product) => {
     return product.category.name.toLowerCase() === categoryName.toLowerCase();

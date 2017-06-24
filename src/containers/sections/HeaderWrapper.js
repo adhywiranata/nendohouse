@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Header from '../../components/core/Header';
-import { selectAllProducts } from '../../reducers/productReducer';
+import { selectProductsBySearchKeyword } from '../../reducers/productReducer';
 import { setHeaderSearchKeyword } from '../../actions';
 
 class HeaderWrapper extends React.Component {
@@ -49,7 +49,7 @@ class HeaderWrapper extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  products: selectAllProducts(state.products),
+  products: selectProductsBySearchKeyword(state.products, state.headerSearch.searchKeyword),
   searchKeyword: state.headerSearch.searchKeyword,
 });
 
