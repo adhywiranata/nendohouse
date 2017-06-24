@@ -3,9 +3,7 @@ import glamorous from 'glamorous';
 
 import ProductRecommendationItem from './ProductRecommendationItem';
 
-const convertUrl = products => (
-  JSON.parse(JSON.stringify(products).replace(/image_url/g, 'imageUrl'))
-);
+import { convertProductImageUrl } from '../../../../helpers/productHelpers';
 
 const FloatingWrapper = glamorous.div({
   position: 'absolute',
@@ -35,7 +33,7 @@ export default ({ products }) => (
   <FloatingWrapper>
     <ListHeading>PRODUCTS</ListHeading>
     <ListWrapper>
-      { convertUrl(products).filter(p => p.id < 6).map(product => (
+      { convertProductImageUrl(products).filter(p => p.id < 6).map(product => (
         <ProductRecommendationItem key={product.id} {...product} />
       ))}
     </ListWrapper>

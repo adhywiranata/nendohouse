@@ -4,9 +4,7 @@ import glamorous from 'glamorous';
 import Item from './Item';
 import SectionHeading from '../../core/Layout/SectionHeading';
 
-const convertUrl = products => (
-  JSON.parse(JSON.stringify(products).replace(/image_url/g, 'imageUrl'))
-);
+import { convertProductImageUrl } from '../../../helpers/productHelpers';
 
 const Row = glamorous.div({
   display: 'flex',
@@ -21,7 +19,7 @@ export default ({ products, isProductsFetching }) => (
     <SectionHeading>New Releases</SectionHeading>
     {isProductsFetching && <h2>Loading</h2>}
     <Row>
-      { convertUrl(products).map(product => <Item key={product.id} {...product} />)}
+      { convertProductImageUrl(products).map(product => <Item key={product.id} {...product} />)}
     </Row>
   </div>
 );
