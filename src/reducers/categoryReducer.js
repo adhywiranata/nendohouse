@@ -1,7 +1,6 @@
 import {
   FETCH_CATEGORIES_LOADING,
   FETCH_CATEGORIES_SUCCESS,
-  FETCH_CATEGORIES_FAILED,
 } from '../actions/constants';
 
 const initialState = {

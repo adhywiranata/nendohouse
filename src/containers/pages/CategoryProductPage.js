@@ -14,7 +14,7 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const { category, title } = this.props.match.params;
+    const { category } = this.props.match.params;
     return (
       <div style={{ paddingTop: 80 }}>
         <WideSection>
