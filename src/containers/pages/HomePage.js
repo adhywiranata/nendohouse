@@ -1,17 +1,24 @@
+// @flow
 import React from 'react';
 import { connect } from 'react-redux';
 
 import { selectAllProducts } from '../../reducers/productReducer';
-import { selectAllCategories } from '../../reducers/categoryReducer';
-import { fetchProducts, fetchCategories } from '../../actions';
+import { fetchProducts } from '../../actions';
 
 import ParallaxCover from '../../components/home/ParallaxCover';
 import ProductList from '../../components/products/List';
 import WideSection from '../../components/core/Layout/WideSection';
 
 class HomePage extends React.Component {
+
   componentDidMount() {
     this.props.fetchProducts();
+  }
+
+  props: {
+    fetchProducts: func,
+    products: [],
+    isProductsFetching: boolean,
   }
 
   render() {

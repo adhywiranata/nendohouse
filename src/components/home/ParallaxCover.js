@@ -2,24 +2,24 @@ import React from 'react';
 
 import CoverImg from '../../images/cover.jpg';
 
-export default class ParallaxCover extends React.Component {
+class ParallaxCover extends React.Component {
   componentDidMount() {
     let currentYScroll = 0;
     const parallaxCover = document.getElementById('parallaxCover');
     window.addEventListener('scroll', () => {
-      if(window.pageYOffset === 0) {
+      if (window.pageYOffset === 0) {
         parallaxCover.style.backgroundPosition = '0% -50px';
-        parallaxCover.style.WebkitFilter = `grayscale(70%) blur(0px)`;
+        parallaxCover.style.WebkitFilter = 'grayscale(70%) blur(0px)';
         return true;
       }
-      let currVal = Number(parallaxCover.style.backgroundPosition.split(' ')[1].replace('px', ''));
+      const currVal = Number(parallaxCover.style.backgroundPosition.split(' ')[1].replace('px', ''));
       let increment = 3;
       if (window.pageYOffset > currentYScroll) {
         increment = -3;
       }
       currentYScroll = window.pageYOffset;
       parallaxCover.style.backgroundPosition = `0% ${currVal + increment}px`;
-      parallaxCover.style.WebkitFilter = `grayscale(70%) blur(3px)`;
+      parallaxCover.style.WebkitFilter = 'grayscale(70%) blur(3px)';
       return true;
     });
   }
@@ -57,3 +57,5 @@ export default class ParallaxCover extends React.Component {
     );
   }
 }
+
+export default ParallaxCover;
