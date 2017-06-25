@@ -1,14 +1,5 @@
 {
   "projects": {
     "default": "nendohouse"
-  },
-  "hosting": {
-    "public": "build",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**",
-      "**/src/**",
-    ]
   }
 }
