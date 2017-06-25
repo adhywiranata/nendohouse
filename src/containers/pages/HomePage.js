@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { connect } from 'react-redux';
+import localforage from 'localforage';
 
 import { selectAllProducts } from '../../reducers/productReducer';
 import { fetchProducts } from '../../actions';
@@ -10,9 +11,31 @@ import ProductList from '../../components/products/List';
 import WideSection from '../../components/core/Layout/WideSection';
 
 class HomePage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOnline: window.navigator.onLine,
+      products: [],
+    };
+  }
 
   componentDidMount() {
-    this.props.fetchProducts();
+    if (window.navigator.onLine) {
+      this.props.fetchProducts();
+    } else {
+      localforage.getItem('products', (err, value) => {
+        if (value) {
+          this.setState({ products: value });
+        }
+      });
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      products: nextProps.products,
+    });
+    localforage.setItem('products', nextProps.products);
   }
 
   props: {
@@ -27,7 +50,7 @@ class HomePage extends React.Component {
         <ParallaxCover />
         <WideSection>
           <ProductList
-            products={this.props.products}
+            products={this.state.products}
             isProductsFetching={this.props.isProductsFetching}
           />
         </WideSection>

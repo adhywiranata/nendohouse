@@ -38,7 +38,7 @@ class App extends React.Component {
 
   updateNetworkIndicator() {
     this.setState({
-      isOnline: navigator.onLine,
+      isOnline: window.navigator.onLine,
     });
   }
 
