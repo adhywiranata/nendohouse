@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { LazyComponent } from 'react-code-split-component';
 
 import Headerbar from './Headerbar';
@@ -16,7 +17,9 @@ export default ({
 }) => (
   <div>
     <Headerbar>
-      <Logo>NENDOHOUSE</Logo>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <Logo>NENDOHOUSE</Logo>
+      </Link>
       <SearchBar
         searchKeyword={searchKeyword}
         isSearchFocus={isSearchFocus}
