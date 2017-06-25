@@ -29,9 +29,11 @@ class HeaderWrapper extends React.Component {
   }
 
   handleSearchBlur() {
-    this.setState({
-      isSearchFocus: false,
-    });
+    setTimeout(() => {
+      this.setState({
+        isSearchFocus: false,
+      });
+    }, 100);
   }
 
   render() {
