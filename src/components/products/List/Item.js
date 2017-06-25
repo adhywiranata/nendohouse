@@ -3,6 +3,8 @@ import glamorous from 'glamorous';
 import { Link } from 'react-router-dom';
 
 import { colors } from '../../../constants';
+import { StrToSlug } from '../../../helpers/productHelpers';
+
 import Card from '../../core/Layout/Card';
 import LazyImage from '../../core/Layout/LazyImage';
 import { Info, Title, Seller, Location, Price } from './Info';
@@ -52,11 +54,9 @@ const BuyButton = glamorous.button({
   },
 });
 
-const toSlug = sentence => sentence.toLowerCase().split(' ').join('-');
-
 export default ({ name, imageUrl, seller, price, location, category = { name: '', slug: '' } }) => (
   <ResponsiveItem style={{ height: 'auto' }}>
-    <Link to={`/products/${category.slug}/${toSlug(name)}`} style={{ textDecoration: 'none' }}>
+    <Link to={`/products/${category.slug}/${StrToSlug(name)}`} style={{ textDecoration: 'none' }}>
       <Card style={{ position: 'relative', padding: 0, paddingBottom: 30, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         <LazyImage src={imageUrl} style={{ flex: 1 }} />
         <Info style={{ flex: 1 }}>
