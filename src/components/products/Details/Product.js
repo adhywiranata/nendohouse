@@ -2,6 +2,7 @@ import React from 'react';
 import { colors, fontSizeScale, fontBoldScale } from '../../../constants';
 
 import Button from '../../../components/core/reusables/Button';
+import TextInput from '../../../components/core/reusables/TextInput';
 
 export default () => (
   <div style={{ display: 'flex', flexDirection: 'column', width: '70%', padding: 0 }}>
@@ -34,7 +35,7 @@ export default () => (
         <span>Stok: 50</span>
         <div>
           <Button>+</Button>
-          <input type="text" />
+          <TextInput type="text" />
           <Button>-</Button>
         </div>
         <div>
