@@ -42,6 +42,7 @@ class HomePage extends React.Component {
     fetchProducts: func,
     products: [],
     isProductsFetching: boolean,
+    isFetchingError: boolean,
   }
 
   render() {
@@ -52,6 +53,7 @@ class HomePage extends React.Component {
           <ProductList
             products={this.state.products}
             isProductsFetching={this.props.isProductsFetching}
+            isFetchingError={this.props.isFetchingError}
           />
         </WideSection>
       </div>
@@ -62,6 +64,7 @@ class HomePage extends React.Component {
 const mapStateToProps = state => ({
   products: selectAllProducts(state.products, state.categories),
   isProductsFetching: state.products.isFetching,
+  isFetchingError: state.products.isError,
 });
 
 const mapDispatchToProps = dispatch => ({

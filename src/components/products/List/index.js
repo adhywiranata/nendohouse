@@ -14,10 +14,12 @@ const Row = glamorous.div({
   flexWrap: 'wrap',
 });
 
-export default ({ products, isProductsFetching }) => (
+export default ({ products, isProductsFetching, isFetchingError }) => (
   <div>
     <SectionHeading>New Releases</SectionHeading>
     {isProductsFetching && <h2>Loading</h2>}
+    {isFetchingError && (
+      <p>Ooops! Error when loading your products :( Sorry for the inconvenience.</p>)}
     <Row>
       { convertProductImageUrl(products).map(product => <Item key={product.id} {...product} />)}
     </Row>
