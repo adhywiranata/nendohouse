@@ -1,8 +1,8 @@
 import glamorous from 'glamorous';
-import { colors, fontBoldScale } from '../../../constants';
+import { colors, fontSizeScale, fontBoldScale } from '../../../constants';
 
 export default glamorous.button({
-  fontSize: '1em',
+  fontSize: fontSizeScale.small,
   outline: 'none',
   cursor: 'pointer',
   margin: 5,
