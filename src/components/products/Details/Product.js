@@ -63,8 +63,5 @@ export default () => (
         </p>
       </div>
     </Product>
-    <div>
-      tabbed contents
-    </div>
   </ProductWrapper>
 );
